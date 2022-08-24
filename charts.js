@@ -102,7 +102,7 @@ function buildCharts(sample) {
         // 10. Use Plotly to plot the data with the layout. 
         Plotly.newPlot("bar",barData, barLayout);
 
-        // Bar and Bubble charts    
+        //Create the Bubble chart for Deliverable 2
 
         // 1. Create the trace for the bubble chart.
         var bubbleData = [{
@@ -120,8 +120,51 @@ function buildCharts(sample) {
           xaxis: {title: "OTU ID"}
         };
 
-        // 3. Use Plotly to plot the data with the layout.
-        Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+         // 3. Use Plotly to plot the data with the layout.
+         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+
+        //Deliverable 3
+
+        //Create a variable that holds the washing frequency.
+        var washFrequency = parseFloat(metadata.wfreq);
+        //4.  Create the gauge chart
+        var gaugeData = [
+          {
+            type: "indicator",
+            mode: "gauge+number",
+            value: washFrequency,
+            title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
+            delta: { reference: 5, increasing: { color: "black" } },
+            gauge: {
+              axis: { range: [null, 10], tickwidth: 1, tickcolor: "darkblue" },
+              bar: { color: "darkblue" },
+              bgcolor: "blue",
+              borderwidth: 2,
+              bordercolor: "black",
+              steps: [
+                { range: [0, 2], color: "cyan" },
+                { range: [2, 4], color: "dodgerblue" },
+                { range: [4, 6], color: "blue" },
+                { range: [6, 8], color: "mediumblue" },
+                { range: [8, 10], color: "midnightblue" }
+              ],
+             
+            }
+          }
+
+        ];
+
+        //5. Create layout for gauge chart
+        var gaugeLayout = {
+          width: 500,
+          height: 400,
+          margin: { t: 25, r: 25, l: 25, b: 25 },
+          paper_bgcolor: "lavender",
+          font: { color: "darkblue", family: "Arial" }
+        };
+        // 6. Use Plotly to plot the gauge data and layout.
+        Plotly.newPlot("gauge", gaugeData, gaugeLayout);
+        
       });
   }
 
