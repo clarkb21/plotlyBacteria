@@ -18,6 +18,11 @@
 
 ![image](https://user-images.githubusercontent.com/104038813/186795576-ef6981a3-71cc-4a2d-8139-7e3977ef09ca.png)
 
+## Results
+- The results for my work are published on my Github pages site where users can access the data, find their specific ID number, and analyze the charts for bacteria found in their specific bodies. 
+- Here is the link to the Github pages: https://clarkb21.github.io/plotlyBacteria/
+
+
 
 ## Resources
 - Data Source: samples.json file for bacteria
